@@ -1,0 +1,82 @@
+@layout('layouts.master')
+@section('content')
+    @set('title', 'Contact')
+    {{-- Contact page --}}
+    <main class="main-login-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">
+                                <strong>Contactez-nous</strong>
+                            </h2>
+                            <hr class="my-4" />
+                            @include('includes.notification')
+                            <div class="text-center small">
+                                Vouz avez une question ? Nous sommes à votre écoute.
+                            </div>
+                            <form action="/contact" method="post">
+                                {{ csrfField() }}
+                                <div class="form-group">
+                                    <label class="sr-only" for="name">name</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                            <i class="fas fa-user"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            class="form-control {{ hasErrorFor('name') ? 'is-invalid' : '' }}"
+                                            id="name"
+                                            placeholder="Nom"
+                                            name="name"
+                                            value="{{ old('name', '') }}"
+                                            required
+                                        />
+                                        {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('name'), hasErrorFor('name')) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">email</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                            <i class="fas fa-envelope"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            type="email"
+                                            class="form-control {{ hasErrorFor('email') ? 'is-invalid' : '' }}"
+                                            id="email"
+                                            name="email"
+                                            placeholder="dupond@email.com"
+                                            value="{{ old('email', '') }}"
+                                            required
+                                        />
+                                        {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control {{ hasErrorFor('message') ? 'is-invalid' : '' }}" 
+                                    id="message" rows="8" minlength="20" maxlength="500" value="{{ old('message', '') }}" name="message" required>
+                                    </textarea>
+                                    {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('message'), hasErrorFor('message')) }}
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-lg btn-primary btn-block text-uppercase"
+                                >
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{-- End Contact --}}
+@endsection

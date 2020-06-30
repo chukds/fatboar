@@ -1,0 +1,14 @@
+<p>
+  Bonjour {{ member.firstname }}, il semble que quelqu'un ait demandé la r&eacute;cup&eacute;ration du mot de passe
+  pour votre compte enregistr&eacute; avec l'e-mail {{ member.email }}.
+</p>
+
+<p>
+    Si c'&eacute;tait vous, cliquez simplement sur ce lien
+<a href="{{ appUrl('password/reset/' + encodeURIComponent(token)) }}">R&eacute;initialiser mot de passe</a>
+</p>
+
+<p>
+    Si ce n'est pas vous, nous vous recommandons de changer votre mot de passe. Quelqu'un peut
+    l'ont vol&eacute;e. &#128064;&#128064;&#128064;
+</p>

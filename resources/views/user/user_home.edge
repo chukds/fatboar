@@ -1,0 +1,64 @@
+@layout('layouts.master')
+@section('content')
+  @set('title', 'Accueil utilisateur')
+    {{-- User home page --}}
+    <main>
+        <div class="cotainer-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 mx-auto my-3">
+                    <div class="jumbotron is-info">
+                        @if(auth.user.provider_id !== null)
+                            <h1 class="display-4">Bonjour, {{auth.user.username}}.</h1>
+                        @else
+                            <h1 class="display-4">Bonjour, {{auth.user.firstname}}.</h1>
+                        @endif
+                        <p class="lead">Comment se passe votre journ&eacutee ?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">
+                            <strong>Ajouter ticket</strong>
+                        </h2>
+                        <hr class="my-4" />
+                        @include('includes.notification')
+                        <form action="{{ route('user.addCoupon') }}" method="post">
+                            {{ csrfField() }}
+                            <div class="form-group">
+                                <label class="sr-only" for="ticket">Ticket</label>
+                                <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-ticket-alt"></i>
+                                    </span>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="form-control {{ hasErrorFor('coupon_name') ? 'is-invalid' : '' }}"
+                                    id="ticket"
+                                    placeholder="numéro de ticket ..."
+                                    name="coupon_name"
+                                    value="{{ old('coupon_name', '') }}"
+                                    minlength="15"
+                                    maxlength="15"
+                                    required
+                                />
+                                {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('coupon_name'), hasErrorFor('coupon_name')) }}
+                                </div>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-lg btn-primary btn-block text-uppercase"
+                            >
+                                Participer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{-- End user home page --}}
+@endsection

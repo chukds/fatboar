@@ -1,0 +1,52 @@
+@layout('layouts.master')
+@section('content')
+    @set('title', 'Mot de passe oublié')
+    {{-- Send password reset link page --}}
+    <main class="main-login-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">
+                                <strong>Mot de passe oublié</strong>
+                            </h2>
+                            <hr class="my-4" />
+                            @include('includes.notification')
+                            <form action="{{ route('password.email') }}" method="post">
+                                {{ csrfField() }}
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Password</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            class="form-control {{ hasErrorFor('email') ? 'is-invalid' : '' }}"
+                                            id="email"
+                                            placeholder="dupond@email.com"
+                                            name="email"
+                                            type="email"
+                                            value="{{ old('email', '') }}"
+                                            required
+                                        />
+                                        {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+                                    </div>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-lg btn-primary btn-block text-uppercase"
+                                >
+                                    Envoyer
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{-- End send password reset page --}}
+@endsection

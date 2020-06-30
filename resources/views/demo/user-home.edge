@@ -1,0 +1,78 @@
+@layout('layouts.master')
+@section('content')
+  @set('title', 'Accueil utilisateur')
+    {{--User home page --}}
+    <main>
+        <div class="cotainer-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 mx-auto my-3">
+                    <div class="jumbotron is-info">
+                        <h1 class="display-4">Bonjour, User.</h1>
+                        <p class="lead">Comment se passe votre journ&eacutee ?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-lg-3 col-md-4">
+                    <div class="card card-signin">
+                        <div class="card-body text-center">
+                          <p class="title">100</p>
+                          <p class="subtitle">Participations</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card card-signin">
+                        <div class="card-body text-center">
+                          <p class="title">80</p>
+                          <p class="subtitle">Prix r&eacute;cup&eacute;rés</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card card-signin">
+                        <div class="card-body text-center">
+                            <p class="title">20</p>
+                            <p class="subtitle">Prix non r&eacute;cup&eacute;rés</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">
+                            <strong>Participer</strong>
+                        </h2>
+                        <hr class="my-4" />
+                        <form>
+                            <div class="form-group">
+                                <label class="sr-only" for="inlineFormInput">Ticket</label>
+                                <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-ticket-alt"></i>
+                                    </span>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inlineFormInputGroup"
+                                    placeholder="Ticket"
+                                />
+                                </div>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-lg btn-primary btn-block text-uppercase"
+                            >
+                                Participer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{-- End user home page --}}
+@endsection
