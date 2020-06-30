@@ -1,0 +1,10 @@
+{{-- Notification --}}
+@if(flashMessage('notification'))
+    <div class="alert alert-{{ flashMessage('notification.type') }} alert-dismissible fade show" role="alert">
+        {{ flashMessage('notification.message') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
+{{-- End Notification --}}

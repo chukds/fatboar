@@ -1,0 +1,100 @@
+@layout('layouts.master')
+@section('content')
+    @set('title', 'Login')
+    {{-- Login page --}}
+    <main class="main-login-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">
+                                <strong>Connexion</strong>
+                            </h2>
+                            <hr class="my-4" />
+                            @include('includes.notification')
+                            <div class="text-center small">
+                                Cr&eacute;er un compte ? <a href="/register">Inscription</a>
+                            </div>
+                            <div class="form-group">
+                                <div class="social-btn text-center">
+                                    <a href="{{ route('social.login', {provider: 'facebook'}) }}" class="btn btn-primary btn-lg" title="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="{{ route('social.login', {provider: 'google'}) }}" class="btn btn-danger btn-lg" title="Google">
+                                        <i class="fab fa-google"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <form action="{{ route('login') }}" method="post">
+                                {{ csrfField() }}
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            type="email"
+                                            class="form-control {{ hasErrorFor('email') ? 'is-invalid' : '' }}"
+                                            id="email"
+                                            name="email"
+                                            placeholder="dupond@email.com"
+                                            value="{{ old('email', '') }}"
+                                            required
+                                        />
+                                        {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="password">Mot de passe</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input
+                                            type="password"
+                                            class="form-control"
+                                            id="password"
+                                            name="password"
+                                            minlength="8"
+                                            placeholder="motdepasse"
+                                            value="{{ old('password', '') }}"
+                                            required
+                                        />
+                                        {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+                                    </div>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input
+                                    type="checkbox"
+                                    class="form-check-input"
+                                    id="rememberCheck"
+                                    name="remember"
+                                    />
+                                    <label class="form-check-label" for="rememberCheck">
+                                    Restez connecté
+                                    </label>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-lg btn-primary btn-block text-uppercase"
+                                >
+                                    Connexion
+                                </button>
+                                <div class="text-center small">
+                                    <a href="/password/reset">Mot de passe oublié ?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{-- End Login --}}
+@endsection

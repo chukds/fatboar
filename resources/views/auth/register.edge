@@ -1,0 +1,200 @@
+@layout('layouts.master')
+@section('content')
+  @set('title', 'Register')
+    {{--Register page --}}
+    <main class="main-login-bg">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                  <div class="card-body">
+                    <h2 class="card-title text-center">
+                      <strong>Inscription</strong>
+                    </h2>
+                    <hr class="my-4" />
+                    @include('includes.notification')
+                    <div class="form-group">
+                      <div class="social-btn text-center">
+                        <a href="{{ route('social.login', {provider: 'facebook'}) }}" class="btn btn-primary btn-lg" title="Facebook">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="{{ route('social.login', {provider: 'google'}) }}" class="btn btn-danger btn-lg" title="Google">
+                          <i class="fab fa-google"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <form action="{{ route('register') }}" method="post">
+                      {{ csrfField() }}
+                      <div class="form-group">
+                        <label class="sr-only" for="lastName">
+                          Nom
+                        </label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fas fa-user"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control {{ hasErrorFor('lastname') ? 'is-invalid' : '' }}"
+                            id="lastName"
+                            name="lastname"
+                            placeholder="Nom ex. Dupond"
+                            value="{{ old('lastname', '') }}"
+                            required
+                          />
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('lastname'), hasErrorFor('lastname')) }}
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="firstName">
+                          Prénom
+                        </label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fas fa-user"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="text"
+                            class="form-control {{ hasErrorFor('firstname') ? 'is-invalid' : '' }}"
+                            id="firstName"
+                            name="firstname"
+                            placeholder="Prénom ex. Miya"
+                            value="{{ old('firstname', '') }}"
+                            required
+                          />
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('firstname'), hasErrorFor('firstname')) }}
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="eMail">
+                          E-mail
+                        </label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fas fa-envelope"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="email"
+                            class="form-control {{ hasErrorFor('email') ? 'is-invalid' : '' }}"
+                            id="eMail"
+                            name="email"
+                            placeholder="dupond@email.com"
+                            value="{{ old('email', '') }}"
+                            required
+                          />
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="telephone">
+                          Téléphone
+                        </label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fas fa-phone-alt"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="tel"
+                            class="form-control {{ hasErrorFor('telephone') ? 'is-invalid' : '' }}"
+                            id="telephone"
+                            name="telephone"
+                            placeholder="0123456789"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            value="{{ old('telephone', '') }}"
+                            required
+                          />
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('telephone'), hasErrorFor('telephone')) }}
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="passWord">Password</label>
+                        <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fas fa-lock"></i>
+                            </span>
+                          </div>
+                          <input
+                            type="password"
+                            class="form-control {{ hasErrorFor('password') ? 'is-invalid' : '' }}"
+                            id="passWord"
+                            name="password"
+                            placeholder="motdepasse"
+                            value="{{ old('password', '') }}"
+                            minlength="8"
+                            required
+                          />
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
+                        </div>
+                      </div>
+                      <div class="form-group form-check">
+                        <div>
+                          <input
+                          type="checkbox"
+                          class="form-check-input {{ hasErrorFor('is_adult') ? 'is-invalid' : '' }}"
+                          id="adultCheck"
+                          name="is_adult"
+                          value="1"
+                          required
+                          />
+                          <label class="form-check-label" for="adultCheck">
+                            Je certifie avoir 18 ans ou plus
+                          </label>
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('is_adult'), hasErrorFor('is_adult')) }}
+                        </div>
+                        <div>
+                          <input
+                          type="checkbox"
+                          class="form-check-input {{ hasErrorFor('is_cgu') ? 'is-invalid' : '' }}"
+                          id="cguCheck"
+                          name="is_cgu"
+                          value="1"
+                          required
+                          />
+                          <label class="form-check-label" for="cguCheck">
+                            Je confirme avoir pris connaissance et accepter les <a href="/#">Conditions Générales</a>
+                          </label>
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('is_cgu'), hasErrorFor('is_cgu')) }}
+                        </div>
+                        <div>
+                          <input
+                          type="checkbox"
+                          class="form-check-input {{ hasErrorFor('is_news') ? 'is-invalid' : '' }}"
+                          id="newsLetterCheck"
+                          name="is_news"
+                          value="1"
+                          required
+                          />
+                          <label class="form-check-label" for="newsLetterCheck">
+                              Je souhaite recevoir gratuitement la newsletter de Fatboar par e-mail
+                          </label>
+                          {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('is_news'), hasErrorFor('is_news')) }}
+                        </div>
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn btn-lg btn-primary btn-block text-uppercase"
+                      >
+                        Envoyer
+                      </button>
+                      <div class="text-center small">
+                        <a href="/login">J'ai un compte</a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> 
+    </main>
+    {{-- End register page --}}
+@endsection

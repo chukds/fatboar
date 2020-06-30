@@ -1,0 +1,85 @@
+@layout('layouts.master')
+@section('content')
+  @set('title', 'Champion')
+    {{-- Admin Home --}}
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 mx-auto my-2">
+                    <div class="jumbotron is-info">
+                        <h1 class="display-4">Bonjour, {{auth.user.firstname}}.</h1>
+                        <p class="lead">Voici le gagnant final ...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-3">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">
+                                <strong>Gagnant</strong>
+                            </h2>
+                            <hr class="my-4" />
+                            @include('includes.notification')
+                            <form>
+                                {{-- csrfField() --}}
+                                <div class="form-group">
+                                    <label class="sr-only" for="ticket">Ticket</label>
+                                    <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-ticket-alt"></i>
+                                        </span>
+                                    </div>
+                                    <input
+                                        disabled
+                                        type="text"
+                                        class="form-control"
+                                        id="ticket"
+                                        placeholder="{{ coupon.coupon_name }}"
+                                    />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="name">Name</label>
+                                    <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input
+                                        disabled
+                                        type="text"
+                                        class="form-control"
+                                        id="name"
+                                        placeholder="{{ champ.provider_id ? champ.username : champ.firstname }}"
+                                    />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="email">Email</label>
+                                    <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                    <input
+                                        disabled
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="{{champ.email}}"
+                                    />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{-- End Admin Home --}}
+@endsection

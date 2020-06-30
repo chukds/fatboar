@@ -1,0 +1,82 @@
+@layout('layouts.master')
+@section('content')
+    @set('title', 'Liste de Tickets')
+    <main class="class">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 mx-auto">
+
+                    <div class="my-5">
+                        <h2 class="text-center">
+                            <strong>Tickets</strong>
+                        </h2>
+                        <hr class="my-4" />
+                        @include('includes.notification')
+                        @if(coupons.length == 0)
+                            <p> Il n'y a pas des tickets. </p>
+                        @else
+                            {{-- Table --}}
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">R&eacute;compense</th>
+                                    <th scope="col">Statut</th>
+                                    <th scope="col">Utilisateur</th>
+                                    <th scope="col">E-mail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @each(coupon in coupons)
+                                        <tr>
+                                            <td>{{coupon.coupon_name}}</td>
+                                            @if(coupon.prize_id == 1)
+                                                <td>une entrée ou un dessert au choix</td>
+                                            @elseif(coupon.prize_id == 2)
+                                                <td>un burger au choix</td>
+                                            @elseif(coupon.prize_id == 3)
+                                                <td>un menu du jour</td>
+                                            @elseif(coupon.prize_id == 4)
+                                                <td>un menu au choix</td>
+                                            @else
+                                                <td>70% de réduction</td>
+                                            @endif
+                                            @if(coupon.status == 1)
+                                                <td>
+                                                    <span class="badge badge-pill badge-success">
+                                                    <i class="far fa-check-circle"></i>
+                                                    Reclamé
+                                                    </span>
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <span class="badge badge-pill badge-danger">
+                                                    <i class="far fa-pause-circle"></i>
+                                                    Attente
+                                                    </span>
+                                                </td>
+                                            @endif
+                                            @if(user.username)
+                                                <td>
+                                                    {{user.username}}
+                                                </td>
+                                            @else
+                                                <td>
+                                                    {{user.firstname}}
+                                                </td>
+                                            @endif
+                                            <td>{{user.email}}</td>
+                                        </tr>
+                                    @endeach
+                                </tbody>
+                                </table>
+                            </div>
+                            {{-- End Table --}}
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+@endsection

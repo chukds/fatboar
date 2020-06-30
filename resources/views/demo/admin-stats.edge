@@ -1,0 +1,75 @@
+@layout('layouts.master')
+@section('content')
+  @set('title', 'Admin Stats')
+    {{-- Admin Stats --}}
+    <div class="container-fluid">
+      <div class="row justify-content-md-center my-3">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                  This is some text within a card body.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                  This is some text within a card body.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body text-center">
+                  This is some text within a card body.
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center my-3">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header text-center">
+                  Pie Chart 1
+                </div>
+                <div class="card-body">
+                  <canvas id="chartOne" height="200" ></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header text-center">
+                  Pie Chart 2
+                </div>
+                <div class="card-body">
+                  <canvas id="chartTwo" height="200" ></canvas>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-md-center my-3">
+        <div class="col-md-5">
+          <div class="card">
+              <div class="card-header text-center">
+                Pie Chart 3
+              </div>
+              <div class="card-body">
+                <canvas id="chartThree" height="200" ></canvas>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header text-center">
+                  Pie Chart 4
+                </div>
+                <div class="card-body">
+                  <canvas id="chartFour" height="200" ></canvas>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    {{-- End Admin Stats --}}
+@endsection

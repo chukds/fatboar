@@ -1,0 +1,175 @@
+@layout('layouts.master')
+@section('content')
+  @set('title', 'Statistiques')
+    {{-- Admin Stats --}}
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 mx-auto my-3">
+                    <div class="jumbotron is-info">
+                        <h1 class="display-4">Bonjour, {{auth.user.firstname}}.</h1>
+                        <p class="lead">Comment se passe votre journ&eacutee ?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-lg-3 col-md-4">
+                    <div class="card card-signin">
+                        <div class="card-body text-center">
+                            <p class="title">{{totalUsers}}</p>
+                            <p class="subtitle">Utilisateurs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card card-signin">
+                        <div class="card-body text-center">
+                            <p class="title">{{totalParticipants}}</p>
+                            <p class="subtitle">Participants</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="card card-signin">
+                        <div class="card-body text-center">
+                            <p class="title">{{totalPrizes}}</p>
+                            <p class="subtitle">Prix livr&eacute;es</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center my-3">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header text-center">
+                          Pie Chart 1
+                        </div>
+                        <div class="card-body">
+                          <canvas id="chartOne" height="200" ></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header text-center">
+                          Participations
+                        </div>
+                        <div class="card-body">
+                          <canvas id="chartTwo" height="200" ></canvas>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row justify-content-md-center my-3">
+                <div class="col-md-5">
+                  <div class="card">
+                      <div class="card-header text-center">
+                        Recompenses
+                      </div>
+                      <div class="card-body">
+                        <canvas id="chartThree" height="200" ></canvas>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header text-center">
+                          Pie Chart 4
+                        </div>
+                        <div class="card-body">
+                          <canvas id="chartFour" height="200" ></canvas>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </main>
+    {{-- End Admin Stats --}}
+    {{ script('chart.min.js') }}
+
+
+    
+    {{-- script('ftb-charts.js') --}}
+    <script>
+        let totalmenu = {{totalMenu}}
+        let totalburger = {{totalBurger}}
+        let totalchoice = {{totalChoice}}
+        let totalstarter = {{totalStarter}}
+        let totaldiscount = {{totalDiscount}}
+        let totalusers = {{{totalUsers}}};
+        let totalprizes = {{{totalPrizes}}}
+        let totalparticipants = {{{totalParticipants}}}
+
+
+        // console.log(value);
+        /*let ctxOne = document.getElementById("chartOne").getContext("2d");
+        let chartOne = new Chart(ctxOne, {
+            type: "pie",
+            data: {
+                labels: ["Participations", "Recompense"],
+                datasets: [
+                {
+                    backgroundColor: ["#2ecc71", "#e74c3c"],
+                    data: [totalparticipants, totalprizes],
+                },
+                ],
+            },
+            options: {
+                responsive: true,
+            },
+        });*/
+        /*
+            let ctxFour = document.getElementById("chartFour").getContext("2d");
+            let chartFour = new Chart(ctxFour, {
+            type: "line",
+            data: {
+                labels: frameworks,
+                datasets: [
+                {
+                    label: "Github Stars",
+                    data: stars,
+                    backgroundColor: "lightpink",
+                    borderColor: "deeppink",
+                    borderWidth: 1,
+                },
+                ],
+            },
+            options: {
+                responsive: true,
+            },
+            });
+        */
+        let ctxTwo = document.getElementById("chartTwo").getContext("2d");
+        let chartTwo = new Chart(ctxTwo, {
+            type: "pie",
+            data: {
+                labels: ["Participations", "Recompense"],
+                datasets: [
+                {
+                    backgroundColor: ["#2ecc71", "#e74c3c"],
+                    data: [totalparticipants, totalprizes],
+                },
+                ],
+            },
+            options: {
+                responsive: true,
+            },
+        });
+        let ctxThree = document.getElementById("chartThree").getContext("2d");
+        let chartThree = new Chart(ctxThree, {
+            type: "pie",
+            data: {
+                labels: ["Entrée ou dessert", "Burger au choix", "Menu du jour", "Menu au choix", "70% de réduction"],
+                datasets: [
+                {
+                    backgroundColor: ["red", "orange","yellow","green","blue"],
+                    data: [totalstarter, totalburger, totalmenu, totalchoice, totaldiscount],
+                },
+                ],
+            },
+            options: {
+                responsive: true,
+            },
+        });
+    </script>
+@endsection

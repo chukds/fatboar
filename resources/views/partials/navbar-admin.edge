@@ -1,0 +1,59 @@
+{{-- Navbar --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand mx-auto" href="{{ route('home') }}">
+        {{--<img src="logo.png" width="70" height="60" alt="" />--}}
+        <h3>FTB.</h3>
+      </a>
+      <button
+        class="btn btn-dark d-inline-block d-lg-none ml-auto"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        @loggedIn
+        <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{auth.user.role}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-search"></i>Chercher
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-file-export"></i>Exporter
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="far fa-stop-circle"></i>Finaliser
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <i class="far fa-chart-bar"></i>Rapports
+                        </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div> 
+                </li>
+        </ul>
+          @else
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Connexion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+          @endloggedIn
+      </div>
+    </div>
+</nav>
+{{-- End Navbar --}}

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{-- Meta Information --}}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+
+  {{-- Title --}}
+<title>Fatboar - {{title}}</title>
+
+  {{-- CSS --}}
+  {{ style('btsp/css/bootstrap.css') }}
+  {{ style('faws/css/all.css') }}
+  {{ style('ftb.css') }}
+</head>
+  <body>
+
+    @include('partials.navbar')
+    <div class="ftb-container">
+        @!section('content')
+    </div>
+    
+    @include('partials.footer')
+    
+    {{-- Scripts --}}
+    {{ script('jquery-3.3.1.slim.min.js') }}
+    {{ script('btsp/js/bootstrap.min.js') }}
+    {{-- script('chart.min.js') --}}
+    {{-- script('ftb-charts.js') --}}
+
+    {{--
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    --}}
+    <script>
+      (function($) {
+        "use strict";
+
+        var fullHeight = function() {
+          $(".js-fullheight").css("height", $(window).height());
+          $(window).resize(function() {
+            $(".js-fullheight").css("height", $(window).height());
+          });
+        };
+        fullHeight();
+
+        $("#sidebarCollapse").on("click", function() {
+          $("#sidebar").toggleClass("active");
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>
