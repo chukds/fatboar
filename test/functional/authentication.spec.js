@@ -32,7 +32,7 @@ test("register a new user", async ({ assert, client }) => {
   await User.query().where({ email }).firstOrFail();
 });
 
-test("Verify if user login is succesful", async ({ assert, client }) => {
+test("check succesful user login", async ({ assert, client }) => {
   // generate a fake user
   const {
     firstname,
