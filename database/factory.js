@@ -33,6 +33,6 @@ Factory.blueprint("App/Models/User", (faker) => {
     lastname: faker.name(),
     email: faker.email(),
     telephone: faker.phone({ formatted: false }),
-    password: "password123",
+    password: faker.string({ length: 9 }),
   };
 });

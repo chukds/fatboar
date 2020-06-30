@@ -1,11 +1,10 @@
 "use strict";
 const Factory = use("Factory");
 const User = use("App/Models/User");
-const { test, trait } = use("Test/Suite")("Authentication");
+const { test, trait } = use("Test/Suite")("AuthController");
 
 trait("Test/ApiClient");
-
-test("registers a new user", async ({ assert, client }) => {
+test("register a new user", async ({ assert, client }) => {
   // generate a fake user
   const {
     firstname,
@@ -33,9 +32,8 @@ test("registers a new user", async ({ assert, client }) => {
   await User.query().where({ email }).firstOrFail();
 });
 
-/*
-test("returns an error if user already exists", async ({ assert, client }) => {
-  // create a new user
+test("Verify if user login is succesful", async ({ assert, client }) => {
+  // generate a fake user
   const {
     firstname,
     lastname,
@@ -43,14 +41,27 @@ test("returns an error if user already exists", async ({ assert, client }) => {
     telephone,
     password,
   } = await Factory.model("App/Models/User").create();
+
+  // save the fake user to the database
+  /*
+  await User.create({
+    firstname,
+    lastname,
+    email,
+    telephone,
+    password,
+  });
+  */
+
+  // make request to login the user
   const response = await client
-    .post("register")
-    .send({ firstname, lastname, email, telephone, password })
+    .post("login")
+    .send({
+      email,
+      password,
+    })
     .end();
-  console.log("error", response.error);
-  // assert the status code is 500
-  // response.assertStatus(500);
-  // assert the error for used email was returned
-  // assert.equal(response.body.message, "Server unable to register user.");
+  // console.log("error", response.error);
+  // assert the status is 200
+  response.assertStatus(200);
 });
-*/
