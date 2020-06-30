@@ -6,13 +6,13 @@
 
 Run the command below to install dependencies
 
-```bash
+```
 $ npm install
 ```
 
 ### Environment variables
 
-Duplicate `.env.example` and rename it `.env`
+Duplicate `.env.example` in 2 files one named `.env` and rename it `.env.testing`
 
 ### Migrations
 
@@ -32,15 +32,14 @@ CACHE_VIEWS=false
 APP_KEY=
 DB_CONNECTION=sqlite
 DB_DATABASE=adonis
-HASH_DRIVER=bcrypt
 SMTP_HOST=smtp.mailtrap.io
 MAIL_USERNAME=
 MAIL_PASSWORD=
-SESSION_DRIVER=cookie
 HASH_DRIVER=bcrypt
+SESSION_DRIVER=cookie
 ```
 
-Enter the following in `.env` file
+Enter the following in `.env.testing` file
 
 ```
 HOST=localhost
@@ -52,24 +51,24 @@ DB_DATABASE=adotest
 
 Run this command to generate a key for the app.
 
-```bash
+```
 $ adonis key:generate
 ```
 
 Run the following command to run migration.
 
-```bash
+```
 $ adonis migration:run
 ```
 
 Seed the database:
 
-```bash
+```
 $ adonis seed
 ```
 
 Finally, start the application:
 
-```bash
+```
 $ adonis serve --dev
 ```

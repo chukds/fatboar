@@ -26,3 +26,13 @@ Factory.blueprint("App/Models/Coupon", (faker, index, data) => {
     coupon_name: faker.string({ length: 10 }),
   };
 });
+
+Factory.blueprint("App/Models/User", (faker) => {
+  return {
+    firstname: faker.name(),
+    lastname: faker.name(),
+    email: faker.email(),
+    telephone: faker.phone({ formatted: false }),
+    password: "password123",
+  };
+});
