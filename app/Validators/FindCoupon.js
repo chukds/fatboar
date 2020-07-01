@@ -5,15 +5,15 @@ class FindCoupon {
     return {
       // validation rules
       email: "email",
-      coupon_name: "min:15|max:15",
-      telephone: "min:10|max:10"
+      coupon_name: "min:10|max:10",
+      telephone: "min:10|max:10",
     };
   }
   get messages() {
     return {
       email: "Woah, {{ field }} n'est pas au bon format.",
       min: "Woah, {{ field }} est trop court.",
-      max: "Woah, {{ field }} est trop long."
+      max: "Woah, {{ field }} est trop long.",
     };
   }
 

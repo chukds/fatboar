@@ -21,7 +21,7 @@ const Route = use("Route");
 | Account Routes
 |--------------------------------------------------------------------------
 */
-
+/*
 Route.group(() => {
   Route.get("/account", "UserController.showEditAccount").as(
     "settings.account"
@@ -34,7 +34,7 @@ Route.group(() => {
 })
   .prefix("/settings")
   .middleware(["auth"]);
-
+*/
 /*
 Route.on("/admin")
   .render("admin")

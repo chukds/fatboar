@@ -23,7 +23,7 @@ Factory.blueprint("App/Models/Coupon", (faker, index, data) => {
   return {
     // reward_id: data[index],
     prize_id: data.pid,
-    coupon_name: faker.string({ length: 10 }),
+    coupon_name: faker.string({ length: 10, alpha: true, numeric: true }),
   };
 });
 

@@ -41,8 +41,8 @@
                                     placeholder="numéro de ticket ..."
                                     name="coupon_name"
                                     value="{{ old('coupon_name', '') }}"
-                                    minlength="15"
-                                    maxlength="15"
+                                    minlength="10"
+                                    maxlength="10"
                                     required
                                 />
                                 {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('coupon_name'), hasErrorFor('coupon_name')) }}
