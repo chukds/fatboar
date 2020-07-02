@@ -257,5 +257,3 @@ Route.post("check", "RouteController.consentCheck");
 
 // Send contact information
 Route.post("contact", "RouteController.sendMessage").validator("Message");
-
-// Route.get("errors", "RouteController.sendError");

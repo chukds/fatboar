@@ -12,12 +12,6 @@ class RouteController {
   sendMessage({ response }) {
     return response.send("Message sent!");
   }
-
-  /*
-  sendError({ response, view }) {
-    return response.send(view.render("404"));
-  }
-  */
 }
 
 module.exports = RouteController;

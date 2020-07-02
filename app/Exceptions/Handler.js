@@ -20,21 +20,7 @@ class ExceptionHandler extends BaseExceptionHandler {
    *
    * @return {void}
    */
-  async handle(error, { request, response }) {
-    response.status(error.status).send(error.message);
-  }
-
-  /**
-   * Report exception for logging or debugging.
-   *
-   * @method report
-   *
-   * @param  {Object} error
-   * @param  {Object} options.request
-   *
-   * @return {void}
-   */
-  async report(error, { response, session, view }) {
+  async handle(error, { response, view }) {
     if (error.name === "InvalidSessionException") {
       session.flash({
         notification: {
@@ -51,9 +37,20 @@ class ExceptionHandler extends BaseExceptionHandler {
     if (error.status === 404) {
       return response.send(view.render("404"));
     }
-
     return super.handle(...arguments);
   }
+
+  /**
+   * Report exception for logging or debugging.
+   *
+   * @method report
+   *
+   * @param  {Object} error
+   * @param  {Object} options.request
+   *
+   * @return {void}
+   */
+  async report(error, { request }) {}
 }
 
 module.exports = ExceptionHandler;

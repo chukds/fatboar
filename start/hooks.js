@@ -17,11 +17,4 @@ hooks.after.providersBooted(() => {
   View.global("encodeURIComponent", (token) => {
     return encodeURIComponent(token);
   });
-
-  //handle `Route not found`
-  /*
-  Exception.handle("HttpException", (error, { response }) => {
-    return response.send(View.render("404"));
-  });
-  */
 });
