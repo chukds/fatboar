@@ -10,12 +10,6 @@ body {
   min-height: 100vh;
   flex-direction: column;
   overflow-x: hidden;
-  /*height: 100%;*/
-}
-
-.ftb-container {
-  flex: 1;
-  /*min-height: 100%;*/
 }
 
 .center-screen {
@@ -28,6 +22,7 @@ body {
 .main-login-bg {
   background: #007bff;
   background: linear-gradient(to right, #0062e6, #33aeff);
+  min-height: 80vh;
 }
 
 .card-signin {
@@ -67,7 +62,7 @@ body {
   opacity: 0.5;
 }
 /** END LOGIN-SIGNUP **/
-
+/*
 a[data-toggle="collapse"] {
   position: relative;
 }
@@ -104,6 +99,7 @@ a[data-toggle="collapse"] {
 .wrapper {
   width: 100%;
 }
+*/
 
 .jumbotron.is-info {
   color: white;
