@@ -131,6 +131,7 @@ Route.on("demo/search").render("demo.search");
 Route.on("demo/tickets/add").render("demo.add-ticket");
 Route.on("demo/staff/tickets/list").render("demo.list-tickets");
 Route.on("demo/user").render("demo.user-home");
+Route.on("demo/error").render("demo.error");
 Route.on("demo/admin/home").render("demo.admin-home");
 Route.on("demo/admin/stats").render("demo.admin-stats");
 
@@ -256,3 +257,5 @@ Route.post("check", "RouteController.consentCheck");
 
 // Send contact information
 Route.post("contact", "RouteController.sendMessage").validator("Message");
+
+// Route.get("errors", "RouteController.sendError");
