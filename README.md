@@ -7,7 +7,7 @@
 Run the command below to install dependencies
 
 ```
-$ npm install
+npm install
 ```
 
 ### Environment variables
@@ -56,23 +56,29 @@ DB_DATABASE=adotest
 Run this command to generate a key for the app.
 
 ```
-$ adonis key:generate
+adonis key:generate
 ```
 
 Run the following command to run migration.
 
 ```
-$ adonis migration:run
+adonis migration:run
 ```
 
 Seed the database:
 
 ```
-$ adonis seed
+adonis seed
+```
+
+To run the tests:
+
+```
+adonis test
 ```
 
 Finally, start the application:
 
 ```
-$ adonis serve --dev
+adonis serve --dev
 ```

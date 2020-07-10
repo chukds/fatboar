@@ -11,7 +11,11 @@
 <title>Fatboar - {{title}}</title>
 
   {{-- CSS --}}
-  {{ style('btsp/css/bootstrap.css') }}
+  {{--
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  --}}
+  {{ style('btsp/css/bootstrap.css')}}
   {{ style('faws/css/all.css') }}
   {{ style('ftb.css') }}
 </head>
@@ -22,31 +26,43 @@
     @include('partials.footer')
 
     {{-- Scripts --}}
+    {{--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    --}}
     {{ script('jquery-3.3.1.slim.min.js') }}
     {{ script('btsp/js/bootstrap.min.js') }}
+    <script>
+      (function() {
+        if (!localStorage.getItem('cookieconsent')) {
+          var request = new XMLHttpRequest();
+          request.onreadystatechange = function() {
+            // if (!localStorage.getItem('cookieconsent')) {
+            if (this.readyState == 4 && this.status == 200) {
+              var data = JSON.parse(request.responseText);
+              var eu_country_codes = ['AL','AD','AM','AT','BY','BE','BA','BG','CH','CY','CZ','DE','DK','EE','ES','FO','FI','FR','GB','GE','GI','GR','HU','HR','IE','IS','IT','LT','LU','LV','MC','MK','MT','NO','NL','PO','PT','RO','RU','SE','SI','SK','SM','TR','UA','VA'];
+              if (eu_country_codes.indexOf(data.countryCode) != -1) {
+                document.body.innerHTML += '\
+                <div class="cookieconsent" style="position:fixed;padding:20px;left:0;bottom:0;background-color:#000;color:#FFF;text-align:center;width:100%;z-index:99999;">\
+                  This site uses cookies. By continuing to use this website, you agree to their use. \
+                  <a href="#" style="color:#CCCCCC;">I Understand</a>\
+                </div>\
+                ';
+                document.querySelector('.cookieconsent a').onclick = function(e) {
+                  e.preventDefault();
+                  document.querySelector('.cookieconsent').style.display = 'none';
+                  localStorage.setItem('cookieconsent', true);
+                };
+              }
+            }
+          };
+          request.open('GET', 'http://ip-api.com/json', true);
+          request.send();
+        }
+      })();
+    </script>
     {{-- script('chart.min.js') --}}
     {{-- script('ftb-charts.js') --}}
-
-    {{--
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    --}}
-    <script>
-      (function($) {
-        "use strict";
-
-        var fullHeight = function() {
-          $(".js-fullheight").css("height", $(window).height());
-          $(window).resize(function() {
-            $(".js-fullheight").css("height", $(window).height());
-          });
-        };
-        fullHeight();
-
-        $("#sidebarCollapse").on("click", function() {
-          $("#sidebar").toggleClass("active");
-        });
-      })(jQuery);
-    </script>
   </body>
 </html>
