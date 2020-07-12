@@ -57,9 +57,9 @@ class AuthController {
     }
   }
 
-  // Register user
-  async register({ request, response, auth, session }) {
-    const formData = request.only([
+  // Register without captcha
+  async enrol({ request, response, auth, session }) {
+    const userData = request.only([
       "firstname",
       "lastname",
       "email",
@@ -72,7 +72,42 @@ class AuthController {
     // return formData;
 
     try {
-      const user = await User.create(formData);
+      const user = await User.create(userData);
+      const login = await auth.login(user);
+      return response.route("user-home");
+      /*return response.route("user-home", {
+        totalCoupons: 0,
+        activeCoupons: 0,
+        inactiveCoupons: 0
+      });*/
+    } catch (error) {
+      session.flash({
+        notification: {
+          type: "danger",
+          message: `Désolé, Nous ne pouvons pas vous inscrire.`,
+        },
+      });
+
+      return response.redirect("back");
+    }
+  }
+
+  // Register user with captcha
+  async register({ request, response, auth, session }) {
+    const userData = request.only([
+      "firstname",
+      "lastname",
+      "email",
+      "telephone",
+      "password",
+      "is_adult",
+      "is_cgu",
+      "is_news",
+    ]);
+    // return formData;
+
+    try {
+      const user = await User.create(userData);
       const login = await auth.login(user);
       return response.route("user-home");
       /*return response.route("user-home", {

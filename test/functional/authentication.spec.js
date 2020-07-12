@@ -15,7 +15,7 @@ test("register a new user", async ({ assert, client }) => {
   } = await Factory.model("App/Models/User").create();
   // make api request to register a new user
   const response = await client
-    .post("register")
+    .post("enrol")
     .send({
       firstname,
       lastname,
@@ -41,17 +41,6 @@ test("check succesful user login", async ({ assert, client }) => {
     telephone,
     password,
   } = await Factory.model("App/Models/User").create();
-
-  // save the fake user to the database
-  /*
-  await User.create({
-    firstname,
-    lastname,
-    email,
-    telephone,
-    password,
-  });
-  */
 
   // make request to login the user
   const response = await client

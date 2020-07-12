@@ -109,6 +109,9 @@ Route.post("register", "AuthController.register")
   .validator("Register")
   .as("register");
 
+// Register user test route without captcha
+Route.post("enrol", "AuthController.enrol");
+
 // Login user
 Route.post("login", "AuthController.login").validator("Login").as("login");
 
