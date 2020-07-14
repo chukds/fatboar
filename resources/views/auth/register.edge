@@ -136,6 +136,7 @@
                           {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('password'), hasErrorFor('password')) }}
                         </div>
                       </div>
+                      <input type="hidden" name="recaptcha" id="recaptcha">
                       <div class="form-group form-check">
                         <div>
                           <input
@@ -194,7 +195,17 @@
                 </div>
               </div>
             </div>
-        </div> 
+        </div>
     </main>
+    <script src='https://www.google.com/recaptcha/api.js?render={{{rckey()}}}'></script>
+    <script>
+      "use strict";
+      grecaptcha.ready(function () {
+        grecaptcha.execute('{{{rckey()}}}').then(function (token) {
+            var recaptcha = document.getElementById('recaptcha');
+            recaptcha.value = token;
+        });
+      });
+    </script>
     {{-- End register page --}}
 @endsection

@@ -3,12 +3,11 @@
 const { hooks } = require("@adonisjs/ignitor");
 
 hooks.after.providersBooted(() => {
+  const Env = use("Env");
   const View = use("Adonis/Src/View");
   // const Exception = use("Exception");
 
   View.global("appUrl", (path) => {
-    const Env = use("Env");
-
     const APP_URL = Env.get("APP_URL");
 
     return path ? `${APP_URL}/${path}` : APP_URL;
@@ -18,8 +17,7 @@ hooks.after.providersBooted(() => {
     return encodeURIComponent(token);
   });
 
-  // handle `InvalidSessionException`
-  Exception.handle("InvalidSessionException", (error, { response }) => {
-    return response.redirect("/login");
+  View.global("rckey", function () {
+    return Env.get("RECAPTCHA_KEY");
   });
 });

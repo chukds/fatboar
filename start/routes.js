@@ -51,6 +51,14 @@ Route.group(() => {
 |--------------------------------------------------------------------------
 */
 
+/*
+Route.get("register", "RegisterController.showRegister").middleware(["guest"]);
+Route.get("login", "LoginController.showLogin").middleware(["guest"]);
+*/
+
+// Register user test route without captcha
+Route.post("enrol", "AuthController.enrol");
+
 // Register user
 Route.post("register", "AuthController.register")
   .validator("Register")

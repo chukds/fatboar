@@ -1,4 +1,6 @@
 "use strict";
+const Env = use("Env");
+const Fetch = require("node-fetch");
 const User = use("App/Models/User");
 const Coupon = use("App/Models/Coupon");
 
@@ -57,9 +59,9 @@ class AuthController {
     }
   }
 
-  // Register user
-  async register({ request, response, auth, session }) {
-    const formData = request.only([
+  // Register without captcha
+  async enrol({ request, response, auth, session }) {
+    const userData = request.only([
       "firstname",
       "lastname",
       "email",
@@ -72,7 +74,7 @@ class AuthController {
     // return formData;
 
     try {
-      const user = await User.create(formData);
+      const user = await User.create(userData);
       const login = await auth.login(user);
       return response.route("user-home");
       /*return response.route("user-home", {
@@ -90,6 +92,67 @@ class AuthController {
 
       return response.redirect("back");
     }
+  }
+
+  // Register user with captcha
+  async register({ request, response, auth, session }) {
+    const userData = request.only([
+      "firstname",
+      "lastname",
+      "email",
+      "telephone",
+      "password",
+      "is_adult",
+      "is_cgu",
+      "is_news",
+    ]);
+    const formData = request.only(["recaptcha"]);
+    // return formData;
+    if (formData.recaptcha) {
+      const url = Env.get("RECAPTCHA_URL");
+      const secret = Env.get("RECAPTCHA_SECRET");
+      const token = formData.recaptcha;
+
+      let res = await Fetch(`${url}?secret=${secret}&response=${token}`);
+      let data = await res.json();
+
+      if (data.success === true && data.score >= 0.5) {
+        try {
+          const user = await User.create(userData);
+          const login = await auth.login(user);
+          return response.route("user-home");
+          /*return response.route("user-home", {
+            totalCoupons: 0,
+            activeCoupons: 0,
+            inactiveCoupons: 0
+          });*/
+        } catch (error) {
+          session.flash({
+            notification: {
+              type: "danger",
+              message: `Désolé, Nous ne pouvons pas vous inscrire.`,
+            },
+          });
+          return response.redirect("back");
+        }
+      }
+      session.flash({
+        notification: {
+          type: "danger",
+          message: `Désolé, êtes-vous humain ?`,
+        },
+      });
+      console.log("Low score failure ...");
+      return response.redirect("back");
+    }
+    session.flash({
+      notification: {
+        type: "danger",
+        message: `Désolé, le champ recaptcha est vide.`,
+      },
+    });
+    // console.log("Outside captcha failure ...");
+    return response.redirect("back");
   }
 
   // Logout user
