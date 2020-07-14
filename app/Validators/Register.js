@@ -9,9 +9,10 @@ class Register {
       is_adult: "required",
       firstname: "required",
       lastname: "required",
-      email: "required|email|unique:users",
+      recaptcha: "required",
       password: "required|min:8",
-      telephone: "required|min:10|max:10"
+      telephone: "required|min:10|max:10",
+      email: "required|email|unique:users",
     };
   }
 
@@ -21,7 +22,7 @@ class Register {
       required: "Woah, {{ field }} est requis.",
       min: "Woah, {{ field }} est trop court.",
       max: "Woah, {{ field }} doit avoir 10 caractères au maximum.",
-      unique: "Désolé, ce {{ field }} existe déjà."
+      unique: "Désolé, ce {{ field }} existe déjà.",
     };
   }
 
