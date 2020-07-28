@@ -36,7 +36,7 @@ test("check coupon format in findCoupon", async ({ assert }) => {
 
 test("check telephone length in findCoupon", async ({ assert }) => {
   const validation = await validate(
-    { coupon_name: "01234567891" },
+    { telephone: "01234567891" },
     FindUserValidator.rules
   );
 
@@ -44,9 +44,9 @@ test("check telephone length in findCoupon", async ({ assert }) => {
   assert.isTrue(validation.fails());
 });
 
-test("check coupon format in findCoupon", async ({ assert }) => {
+test("check telephone format in findCoupon", async ({ assert }) => {
   const validation = await validate(
-    { coupon_name: "1234567890" },
+    { telephone: "1234567890" },
     FindUserValidator.rules
   );
 

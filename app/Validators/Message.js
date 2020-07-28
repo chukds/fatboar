@@ -4,18 +4,29 @@ class Message {
   get rules() {
     return {
       // validation rules
-      name: "required",
-      message: "required|min:20|max:500",
-      email: "required|email"
+      email: "required|email",
+      name: [
+        rule("min", 2),
+        rule("max", 30),
+        rule("required"),
+        rule("regex", new RegExp("/w/g")),
+      ],
+      message: [
+        rule("min", 20),
+        rule("max", 500),
+        rule("required"),
+        rule("regex", new RegExp("/[\s\'\()\.\,\@\?\!\;\^\"\:\w]/gm")),
+      ],
     };
   }
 
   get messages() {
     return {
-      email: "Woah, {{ field }} n'est pas au bon format.",
       required: "Woah, {{ field }} est requis.",
+      email: "Woah, {{ field }} n'est pas au bon format.",
+      regex: "Woah, {{ field }} n'est pas au bon format.",
       min: "Woah, {{ field }} doit avoir 20 caractères au minimum.",
-      max: "Woah, {{ field }} doit avoir 500 caractères au maximum."
+      max: "Woah, {{ field }} doit avoir 500 caractères au maximum.",
       // unique: "Wait a second, the {{ field }} already exists"
     };
   }
