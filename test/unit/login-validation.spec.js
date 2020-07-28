@@ -1,10 +1,8 @@
 "use strict";
 
-const Factory = use("Factory");
 const { validate } = use("Validator");
-const { test, trait } = use("Test/Suite")("Login Validation");
-
 const LoginValidator = use("App/Validators/Login");
+const { test, trait } = use("Test/Suite")("Login Validation");
 
 test("check e-mail format in login", async ({ assert }) => {
   const validation = await validate(

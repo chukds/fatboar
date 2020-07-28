@@ -18,7 +18,7 @@ const coupon60Percent = coupons * 0.6;
 const coupon20Percent = coupons * 0.2;
 const coupon10Percent = coupons * 0.1;
 const coupon6Percent = coupons * 0.06;
-const coupon4Percent = coupons * 0.01;
+const coupon4Percent = coupons * 0.04;
 
 class CouponSeeder {
   async run() {
