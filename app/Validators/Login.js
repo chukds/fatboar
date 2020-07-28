@@ -6,7 +6,7 @@ class Login {
       // validation rules
       // username: "required|unique:users",
       email: "required|email",
-      password: "required|min:8"
+      password: "required|min:8",
     };
   }
 
@@ -14,7 +14,7 @@ class Login {
     return {
       email: "Woah, {{ field }} n'est pas au bon format.",
       min: "Woah, {{ field }} doit avoir 8 caractères au minimum.",
-      required: "Woah, {{ field }} est requis."
+      required: "Woah, {{ field }} est requis.",
       // unique: "Wait a second, the {{ field }} already exists"
     };
   }

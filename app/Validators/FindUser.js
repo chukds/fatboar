@@ -5,8 +5,16 @@ class FindUser {
     return {
       // validation rules
       email: "email",
-      coupon_name: "min:15|max:15",
-      telephone: "min:10|max:10",
+      coupon_name: [
+        rule("min", 10),
+        rule("max", 10),
+        rule("regex", new RegExp("/[a-zA-Z0-9]/g")),
+      ],
+      telephone: [
+        rule("min", 10),
+        rule("max", 10),
+        rule("regex", new RegExp("/[0][0-9]{9}/g")),
+      ],
     };
   }
   get messages() {
@@ -14,6 +22,7 @@ class FindUser {
       email: "Woah, {{ field }} n'est pas au bon format.",
       min: "Woah, {{ field }} est trop court.",
       max: "Woah, {{ field }} est trop long.",
+      regex: "Woah, {{ field }} n'est pas au bon format.",
     };
   }
 
