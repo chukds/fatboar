@@ -42,6 +42,8 @@
                             name="lastname"
                             placeholder="Nom ex. Dupond"
                             value="{{ old('lastname', '') }}"
+                            minlength="2"
+                            maxlength="50"
                             required
                           />
                           {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('lastname'), hasErrorFor('lastname')) }}
@@ -64,6 +66,8 @@
                             name="firstname"
                             placeholder="Prénom ex. Miya"
                             value="{{ old('firstname', '') }}"
+                            minlength="2"
+                            maxlength="50"
                             required
                           />
                           {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('firstname'), hasErrorFor('firstname')) }}
