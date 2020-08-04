@@ -9,32 +9,17 @@
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <h2 class="card-title text-center">
-                                <strong>Confirmation age</strong>
+                                <strong>Confirmation</strong>
                             </h2>
                             <hr class="my-4" />
+                            <p>
+                              <strong>Veuillez acceptez les conditions pour continuer.</strong>
+                            </p>
                             @include('includes.notification')
                             <form action="/check" method="post">
                                 {{ csrfField() }}
-                                <div class="form-group">
-                                    <label class="sr-only" for="email">E-mail</label>
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                        </div>
-                                        <input
-                                            class="form-control {{ hasErrorFor('email') ? 'is-invalid' : '' }}"
-                                            id="email"
-                                            placeholder="dupond@email.com"
-                                            name="email"
-                                            type="email"
-                                            value="{{ old('email', '') }}"
-                                        />
-                                        {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('email'), hasErrorFor('email')) }}
-                                    </div>
-                                </div>
-                                <div class="form-group">
+                                <input type="hidden" name="uzaid" value="{{ userID }}">
+                                <div class="form-group form-check">
                                     <input
                                     type="checkbox"
                                     class="form-check-input {{ hasErrorFor('is_adult') ? 'is-invalid' : '' }}"
@@ -47,6 +32,34 @@
                                       Je certifie avoir 18 ans ou plus
                                     </label>
                                     {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('is_adult'), hasErrorFor('is_adult')) }}
+                                </div>
+                                <div class="form-group form-check">
+                                  <input
+                                  type="checkbox"
+                                  class="form-check-input {{ hasErrorFor('is_cgu') ? 'is-invalid' : '' }}"
+                                  id="cguCheck"
+                                  name="is_cgu"
+                                  value="1"
+                                  required
+                                  />
+                                  <label class="form-check-label" for="cguCheck">
+                                    Je confirme avoir pris connaissance et accepter les <a href="/#">Conditions Générales</a>
+                                  </label>
+                                  {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('is_cgu'), hasErrorFor('is_cgu')) }}
+                                </div>
+                                <div class="form-group form-check">
+                                  <input
+                                  type="checkbox"
+                                  class="form-check-input {{ hasErrorFor('is_news') ? 'is-invalid' : '' }}"
+                                  id="newsLetterCheck"
+                                  name="is_news"
+                                  value="1"
+                                  required
+                                  />
+                                  <label class="form-check-label" for="newsLetterCheck">
+                                      Je souhaite recevoir gratuitement la newsletter de Fatboar par e-mail
+                                  </label>
+                                  {{ elIf('<span class="invalid-feedback">$self</span>', getErrorFor('is_news'), hasErrorFor('is_news')) }}
                                 </div>
                                 <button
                                     type="submit"
