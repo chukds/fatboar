@@ -120,7 +120,9 @@ Route.on("compte/client")
 
 // Show consent page
 Route.on("consent").render("consent");
-
+// Route.on("consent").render("consent").as("consent");
+// Route.get("compte/admin", "AdminController.showAdminHome").as("admin-home");
+// Route.get("consent", )
 // Show contact page
 Route.on("contact").render("contact");
 
@@ -156,6 +158,9 @@ Route.get(
   "/authenticated/:provider",
   "SocialAuthController.handleProviderCallback"
 );
+
+// Send consent information
+Route.post("check", "SocialAuthController.checkConsent");
 
 /*
 |--------------------------------------------------------------------------
@@ -193,7 +198,7 @@ Route.group(() => {
 */
 
 // Send consent information
-Route.post("check", "RouteController.consentCheck");
+// Route.post("check", "RouteController.consentCheck");
 
 // Send contact information
 Route.post("contact", "RouteController.sendMessage").validator("Message");
