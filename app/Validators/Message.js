@@ -1,4 +1,5 @@
 "use strict";
+const { rule } = use("Validator");
 
 class Message {
   get rules() {
@@ -9,13 +10,13 @@ class Message {
         rule("min", 2),
         rule("max", 30),
         rule("required"),
-        rule("regex", new RegExp("/w/g")),
+        rule("regex", /[\w]/g),
       ],
       message: [
         rule("min", 20),
         rule("max", 500),
         rule("required"),
-        rule("regex", new RegExp("/[\s\'\()\.\,\@\?\!\;\^\"\:\w]/gm")),
+        rule("regex", /[\s\'\()\.\,\@\?\!\;\^\"\:\w]/gm),
       ],
     };
   }
@@ -24,10 +25,9 @@ class Message {
     return {
       required: "Woah, {{ field }} est requis.",
       email: "Woah, {{ field }} n'est pas au bon format.",
-      regex: "Woah, {{ field }} n'est pas au bon format.",
+      regex: "Woah, {{ field }} n'est pas COOL!",
       min: "Woah, {{ field }} doit avoir 20 caractères au minimum.",
       max: "Woah, {{ field }} doit avoir 500 caractères au maximum.",
-      // unique: "Wait a second, the {{ field }} already exists"
     };
   }
 

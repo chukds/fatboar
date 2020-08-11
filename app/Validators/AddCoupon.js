@@ -1,4 +1,5 @@
 "use strict";
+const { rule } = use("Validator");
 
 class AddCoupon {
   get rules() {
@@ -9,7 +10,7 @@ class AddCoupon {
         rule("min", 10),
         rule("max", 10),
         rule("required"),
-        rule("regex", new RegExp("/[a-zA-Z0-9]/g")),
+        rule("regex", /[a-zA-Z0-9]/g),
       ],
     };
   }
