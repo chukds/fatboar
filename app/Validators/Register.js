@@ -1,4 +1,5 @@
 "use strict";
+const { rule } = use("Validator");
 
 class Register {
   get rules() {
@@ -11,13 +12,13 @@ class Register {
         rule("min", 2),
         rule("max", 50),
         rule("required"),
-        rule("regex", new RegExp("/[\w]/g")),
+        rule("regex", /[\w]/g),
       ],
       lastname: [
         rule("min", 2),
         rule("max", 50),
         rule("required"),
-        rule("regex", new RegExp("/[\w]/g")),
+        rule("regex", /[\w]/g),
       ],
       recaptcha: "required",
       password: "required|min:8",
@@ -26,7 +27,7 @@ class Register {
         rule("min", 10),
         rule("max", 10),
         rule("required"),
-        rule("regex", new RegExp("/[0][0-9]{9}/g")),
+        rule("regex", /[0][0-9]{9}/g),
       ],
     };
   }

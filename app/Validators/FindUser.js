@@ -1,4 +1,5 @@
 "use strict";
+const { rule } = use("Validator");
 
 class FindUser {
   get rules() {
@@ -8,12 +9,12 @@ class FindUser {
       coupon_name: [
         rule("min", 10),
         rule("max", 10),
-        rule("regex", new RegExp("/[a-zA-Z0-9]/g")),
+        rule("regex", /[a-zA-Z0-9]/g),
       ],
       telephone: [
         rule("min", 10),
         rule("max", 10),
-        rule("regex", new RegExp("/[0][0-9]{9}/g")),
+        rule("regex", /[0][0-9]{9}/g),
       ],
     };
   }

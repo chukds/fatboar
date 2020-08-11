@@ -35,7 +35,7 @@ class PasswordResetController {
 
         await user.tokens().save(token);
 
-        Event.fire("forgot::password", {
+        Event.fire("password::forgot", {
           user: user.toJSON(),
           token: token.token,
           member: user
@@ -59,7 +59,7 @@ class PasswordResetController {
       });
 
       return response.redirect("back");
-    } catch (error) {
+    } catch (e) {
       session.flash({
         notification: {
           type: "danger",
@@ -99,7 +99,7 @@ class PasswordResetController {
       });
 
       return response.redirect("/login");
-    } catch (error) {
+    } catch (e) {
       session.flash({
         notification: {
           type: "danger",

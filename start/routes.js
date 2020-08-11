@@ -201,4 +201,5 @@ Route.group(() => {
 // Route.post("check", "RouteController.consentCheck");
 
 // Send contact information
-Route.post("contact", "RouteController.sendMessage").validator("Message");
+Route.post("contact", "RouteController.toSendMessage").validator("Message");
+// Route.post('/contact', 'ContactController.sendMessage').as('contact.send')
