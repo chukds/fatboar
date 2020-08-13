@@ -120,9 +120,6 @@ Route.on("compte/client")
 
 // Show consent page
 Route.on("consent").render("consent");
-// Route.on("consent").render("consent").as("consent");
-// Route.get("compte/admin", "AdminController.showAdminHome").as("admin-home");
-// Route.get("consent", )
 // Show contact page
 Route.on("contact").render("contact");
 
@@ -149,6 +146,9 @@ Route.on("legales").render("legal");
 
 // Show privacy page
 Route.on("politique").render("privacy");
+
+// Show privacy page
+Route.on("prix").render("user.user_prize").as("prize");
 
 /*
 |--------------------------------------------------------------------------
@@ -212,4 +212,4 @@ Route.group(() => {
 // Send contact information
 Route.post("contact", "RouteController.secureMessage").validator("Message");
 // Route.post("contact", "RouteController.sendMessage").validator("Message");
-// Route.post('/contact', 'ContactController.sendMessage').as('contact.send')
+

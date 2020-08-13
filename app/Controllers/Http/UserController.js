@@ -1,11 +1,11 @@
 "use strict";
-const User = use("App/Models/User");
+//const User = use("App/Models/User");
 const Coupon = use("App/Models/Coupon");
 const Prize = use("App/Models/Prize");
 
 class UserController {
   //Add user coupon
-  async addCoupon({ auth, request, response, session }) {
+  async addCoupon({ auth, request, response, session, view }) {
     const formData = request.only(["coupon_name"]);
 
     try {
@@ -21,13 +21,10 @@ class UserController {
 
         const prize = await Prize.findBy("id", coupon.prize_id);
 
-        session.flash({
-          notification: {
-            type: "success",
-            message: `Félicitations, vous avez gagnez ${prize.prize_name}.`,
-          },
+        return view.render("user.user_prize", {
+          coupon: coupon.toJSON(),
+          prize: prize.toJSON(),
         });
-        return response.redirect("back");
       }
 
       session.flash({
@@ -38,7 +35,7 @@ class UserController {
       });
       return response.redirect("back");
     } catch (e) {
-      // console.log(e);
+      console.log(e);
       session.flash({
         notification: {
           type: "danger",

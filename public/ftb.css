@@ -182,3 +182,30 @@ a[data-toggle="collapse"] {
 	--header-height: 38px;
 }
 */
+
+/*Priz Card */
+.prize-body {
+  background: #eee;
+}
+.prize-span {
+  font-size: 15px;
+}
+.prize-a {
+  text-decoration: none;
+  color: #0062cc;
+  border-bottom: 2px solid #0062cc;
+}
+.prize-box {
+  padding: 60px 0px;
+}
+
+.prize-box-part {
+  background: #fff;
+  border-radius: 0;
+  padding: 60px 10px;
+  margin: 30px 0px;
+}
+.prize-text {
+  margin: 20px 0px;
+}
+

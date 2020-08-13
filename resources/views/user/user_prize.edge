@@ -1,0 +1,55 @@
+@layout('layouts.master')
+@section('content')
+    @set('title', 'Prix')
+    <main class="prize-body">
+      <div class="prize-box">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xs-10 col-sm-4">
+              <div class="prize-box-part text-center">
+                <div class="title">
+                <h3>Ticket #{{coupon.coupon_name}}</h3>
+                </div>
+                  @if(prize.id == 1)
+                    <i class="fas fa-ice-cream fa-6x"></i>
+                  @elseif(prize.id == 2)
+                    <i class="fas fa-hamburger fa-6x"></i>
+                  @elseif(prize.id == 3)
+                    <i class="fas fa-utensils fa-6x"></i>
+                  @elseif(prize.id == 4)
+                    <i class="fas fa-question-circle fa-6x"></i>
+                  @elseif(prize.id == 5)
+                    <i class="fas fa-percentage fa-6x"></i>
+                  @endif
+
+                <div class="title">
+                  @if(prize.id == 1)
+                    <h4>Dessert ou entr&eacute;e au choix</h4>
+                  @elseif(prize.id == 2)
+                    <h4>Burger au choix</h4>
+                  @elseif(prize.id == 3)
+                    <h4>Menu du jour</h4>
+                  @elseif(prize.id == 4)
+                    <h4>Menu au choix</h4>
+                  @elseif(prize.id == 5)
+                    <h4>D70% de reduction</h4>
+                  @endif
+                </div>
+                <div class="prize-text">
+                  <span class="prize-span">
+                    <p>
+                      Pour r&eacute;cup&eacute;rer votre prix rendez-vous dans
+                      n'importe quel restaurant Fatboar avec le num&eacute;ro du
+                      ticket.
+                    </p>
+                    <p>&Aacute; bientôt !</p>
+                  </span>
+                </div>
+                <a class="prize-a" href="{{ route('user-home') }}">Retourner</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+@endsection
