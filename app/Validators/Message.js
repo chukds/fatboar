@@ -5,6 +5,7 @@ class Message {
   get rules() {
     return {
       // validation rules
+      recaptcha: "required",
       email: "required|email",
       name: [
         rule("min", 2),

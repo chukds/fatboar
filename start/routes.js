@@ -141,6 +141,15 @@ Route.on("demo/contact").render("demo.contact");
 Route.on("demo/consent").render("demo.consent");
 Route.on("demo/admin/stats").render("demo.admin-stats");
 
+// Show CGU page
+Route.on("cgu").render("cgu");
+
+// Show legal page
+Route.on("legales").render("legal");
+
+// Show privacy page
+Route.on("politique").render("privacy");
+
 /*
 |--------------------------------------------------------------------------
 | Social Authentication Routes
@@ -201,5 +210,6 @@ Route.group(() => {
 // Route.post("check", "RouteController.consentCheck");
 
 // Send contact information
-Route.post("contact", "RouteController.toSendMessage").validator("Message");
+Route.post("contact", "RouteController.secureMessage").validator("Message");
+// Route.post("contact", "RouteController.sendMessage").validator("Message");
 // Route.post('/contact', 'ContactController.sendMessage').as('contact.send')

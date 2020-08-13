@@ -18,6 +18,7 @@
                             </div>
                             <form action="/contact" method="post">
                                 {{ csrfField() }}
+                                <input type="hidden" name="recaptcha" id="recaptcha">
                                 <div class="form-group">
                                     <label class="sr-only" for="name">name</label>
                                     <div class="input-group mb-2">
@@ -82,5 +83,16 @@
             </div>
         </div>
     </main>
+    <script src='https://www.google.com/recaptcha/api.js?render={{{rckey()}}}'></script>
+    <script>
+      "use strict";
+      grecaptcha.ready(function () {
+        grecaptcha.execute('{{{rckey()}}}').then(function (token) {
+            var recaptcha = document.getElementById('recaptcha');
+            recaptcha.value = token;
+            // console.log(token)
+        });
+      });
+    </script>
     {{-- End Contact --}}
 @endsection

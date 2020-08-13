@@ -142,7 +142,7 @@ class AuthController {
           message: `Désolé, êtes-vous humain ?`,
         },
       });
-      console.log("Low score failure ...");
+      // console.log("Low score failure ...");
       return response.redirect("back");
     }
     session.flash({
