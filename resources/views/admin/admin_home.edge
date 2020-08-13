@@ -16,7 +16,11 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="card card-signin">
                         <div class="card-body text-center">
-                        <p class="title">{{totalUsers}}</p>
+                          @if(totalUsers)
+                            <p class="title">{{totalUsers}}</p>
+                          @else
+                          <p class="title">0</p>
+                          @endif
                           <p class="subtitle">Utilisateurs</p>
                         </div>
                     </div>
@@ -24,7 +28,11 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="card card-signin">
                         <div class="card-body text-center">
-                        <p class="title">{{totalParticipants}}</p>
+                          @if(totalParticipants)
+                            <p class="title">{{totalParticipants}}</p>
+                          @else
+                          <p class="title">0</p>
+                          @endif
                           <p class="subtitle">Participants</p>
                         </div>
                     </div>
@@ -32,8 +40,12 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="card card-signin">
                         <div class="card-body text-center">
-                        <p class="title">{{totalPrizes}}</p>
-                            <p class="subtitle">Prix livr&eacute;es</p>
+                          @if(totalPrizes)
+                            <p class="title">{{totalPrizes}}</p>
+                          @else
+                          <p class="title">0</p>
+                          @endif
+                          <p class="subtitle">Prix livr&eacute;es</p>
                         </div>
                     </div>
                 </div>
@@ -100,25 +112,10 @@
                     </div>
                 </div>
             </div>
-            {{--
-            <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-4 mx-auto my-4">
-                    <div>
-                        <form action="{{route('admin.get.champ')}}" method="post">
-                            {{ csrfField() }}
-                            <button
-                            type="submit"
-                            class="btn btn-lg btn-danger btn-block text-uppercase">
-                                Génerer gagnant
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            --}}
+
             <div class="row">
                 <div class="col-md-12 text-center my-3">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                    <div class="btn-group btn-group-lg" role="group" aria-label="User management">
 
                         {{--<button type="button" class="btn btn-success">Génerer gagnant</button>--}}
 

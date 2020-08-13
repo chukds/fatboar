@@ -34,7 +34,12 @@ class AdminController {
       .whereNotNull("user_id")
       .getCount();
 
+    // const prizes = await Coupon.query().where("status", 1).getCount();
     const totalPrizes = await Coupon.query().where("status", 1).getCount();
+    // const totalPrizes = (prizes===0)?0:prizes;
+    // console.log(typeof prizes);
+    // return prizes;
+    // return totalPrizes;
     const totalStarter = await Coupon.query().where("prize_id", 1).getCount();
     const totalBurger = await Coupon.query().where("prize_id", 2).getCount();
     const totalMenu = await Coupon.query().where("prize_id", 3).getCount();

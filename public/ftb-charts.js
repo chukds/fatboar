@@ -1,5 +1,4 @@
 "use strict";
-
 let ctxOne = document.getElementById("chartOne").getContext("2d");
 let chartOne = new Chart(ctxOne, {
   type: "pie",

@@ -21,9 +21,6 @@ const Route = use("Route");
 | Admin Routes
 |--------------------------------------------------------------------------
 */
-// Route.on("compte/admin/stats").render("admin.admin_stats").as("admin-stats");
-// Route.on("compte/admin/stats").render("admin.admin_stats").as("admin-stats");
-// Route.on("compte/admin").render("admin.admin_home").as("admin-home");
 
 Route.group(() => {
   Route.get("/", "AdminController.showAdminHome").as("admin-home");
@@ -42,18 +39,10 @@ Route.group(() => {
   .prefix("compte/admin")
   .middleware(["auth", "admin"]);
 
-// Show list of staff
-// Show list of users
-
 /*
 |--------------------------------------------------------------------------
 | Authentication Routes
 |--------------------------------------------------------------------------
-*/
-
-/*
-Route.get("register", "RegisterController.showRegister").middleware(["guest"]);
-Route.get("login", "LoginController.showLogin").middleware(["guest"]);
 */
 
 // Register user test route without captcha
@@ -121,7 +110,7 @@ Route.on("compte/client")
 // Show consent page
 Route.on("consent").render("consent");
 // Show contact page
-Route.on("contact").render("contact");
+Route.on("contact").render("contact").middleware(["guest"]);
 
 // Show login page
 // might cause error because of auth middleware !
@@ -132,11 +121,6 @@ Route.on("register").render("auth.register").middleware(["guest"]);
 
 // Show password reset request page
 Route.on("password/reset").render("password.email").middleware(["guest"]);
-
-// Demo Routes
-Route.on("demo/contact").render("demo.contact");
-Route.on("demo/consent").render("demo.consent");
-Route.on("demo/admin/stats").render("demo.admin-stats");
 
 // Show CGU page
 Route.on("cgu").render("cgu");
@@ -205,11 +189,7 @@ Route.group(() => {
 | Miscellanous Routes
 |--------------------------------------------------------------------------
 */
-
-// Send consent information
-// Route.post("check", "RouteController.consentCheck");
-
-// Send contact information
+// Send contact message
 Route.post("contact", "RouteController.secureMessage").validator("Message");
 // Route.post("contact", "RouteController.sendMessage").validator("Message");
 
