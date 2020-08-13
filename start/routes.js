@@ -204,6 +204,15 @@ Route.on("register").render("auth.register");
 // Show password reset request page
 Route.on("password/reset").render("password.email");
 
+// Show CGU page
+Route.on("cgu").render("cgu");
+
+// Show legal page
+Route.on("legales").render("legal");
+
+// Show privacy page
+Route.on("politique").render("privacy");
+
 /*
 |--------------------------------------------------------------------------
 | Social Authentication Routes
@@ -264,5 +273,6 @@ Route.get("compte/client/tickets", "UserController.userCoupons").as(
 // Route.post("check", "RouteController.consentCheck");
 
 // Send contact information
-Route.post("contact", "RouteController.toSendMessage").validator("Message");
+Route.post("contact", "RouteController.secureMessage").validator("Message");
+// Route.post("contact", "RouteController.sendMessage").validator("Message");
 // Route.post('/contact', 'ContactController.sendMessage').as('contact.send')
