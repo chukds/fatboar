@@ -20,8 +20,11 @@ body {
 /** LOGIN-SIGNUP **/
 
 .main-login-bg {
+  /*
   background: #007bff;
   background: linear-gradient(to right, #0062e6, #33aeff);
+  */
+  /*background: #eee;*/
   min-height: 80vh;
 }
 
@@ -209,3 +212,23 @@ a[data-toggle="collapse"] {
   margin: 20px 0px;
 }
 
+footer a{
+  color: #000;
+}
+
+footer a:hover{
+  color:red;
+}
+
+
+.navbar-link {
+  color: #000;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.navbar-link:hover {
+  color:red;
+}
