@@ -20,11 +20,6 @@ body {
 /** LOGIN-SIGNUP **/
 
 .main-login-bg {
-  /*
-  background: #007bff;
-  background: linear-gradient(to right, #0062e6, #33aeff);
-  */
-  /*background: #eee;*/
   min-height: 80vh;
 }
 
@@ -64,45 +59,6 @@ body {
 .social-btn .btn:hover {
   opacity: 0.5;
 }
-/** END LOGIN-SIGNUP **/
-/*
-a[data-toggle="collapse"] {
-  position: relative;
-}
-
-.dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-@media (max-width: 991.98px) {
-  #sidebarCollapse span {
-    display: none;
-  }
-}
-
-#content {
-  width: 100%;
-  padding: 0;
-  min-height: 100vh;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.table-hover tbody tr:hover td {
-  background: aqua;
-}
-
-.wrapper {
-  width: 100%;
-}
-*/
 
 .jumbotron.is-info {
   color: white;
@@ -169,23 +125,6 @@ a[data-toggle="collapse"] {
   margin-top: 5px;
 }
 
-/*
-:root {
-	--dark-blue: #002ead;
-	--theme-color: #0a0a23;
-	--gray90: #0a0a23;
-	--gray85: #1b1b32;
-	--gray80: #2a2a40;
-	--gray75: #3b3b4f;
-	--gray45: #858591;
-	--gray15: #d0d0d5;
-	--gray10: #dfdfe2;
-	--gray05: #eeeef0;
-	--gray00: #fff;
-	--header-height: 38px;
-}
-*/
-
 /*Priz Card */
 .prize-body {
   background: #eee;
@@ -212,23 +151,23 @@ a[data-toggle="collapse"] {
   margin: 20px 0px;
 }
 
-footer a{
+footer a {
   color: #000;
 }
 
-footer a:hover{
-  color:red;
+footer a:hover {
+  color: red;
 }
-
 
 .navbar-link {
   color: #000;
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
 }
 
 .navbar-link:hover {
-  color:red;
+  color: red;
 }
