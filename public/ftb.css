@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300");
 
+/*
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+*/
+
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
@@ -152,7 +156,7 @@ body {
 }
 
 footer a {
-  color: #000;
+  color: #fff;
 }
 
 footer a:hover {

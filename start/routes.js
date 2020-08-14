@@ -131,8 +131,11 @@ Route.on("legales").render("legal");
 // Show privacy page
 Route.on("politique").render("privacy");
 
-// Show privacy page
+// Show prize page
 Route.on("prix").render("user.user_prize").as("prize");
+
+// Show dahome page
+Route.on("dahome").render("dahome");
 
 /*
 |--------------------------------------------------------------------------
@@ -192,4 +195,3 @@ Route.group(() => {
 // Send contact message
 Route.post("contact", "RouteController.secureMessage").validator("Message");
 // Route.post("contact", "RouteController.sendMessage").validator("Message");
-
