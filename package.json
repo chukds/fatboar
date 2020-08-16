@@ -31,6 +31,7 @@
     "@adonisjs/validator": "^5.0.6",
     "@adonisjs/vow": "^1.0.17",
     "json2csv": "^5.0.0",
+    "mysql": "^2.18.1",
     "node-fetch": "^2.6.0",
     "sqlite3": "^4.2.0",
     "url-parse": "^1.4.7"
@@ -39,7 +40,7 @@
   "autoload": {
     "App": "./app"
   },
-  "engines":{
-    "node":"12.15.0"
+  "engines": {
+    "node": "12.15.0"
   }
 }
