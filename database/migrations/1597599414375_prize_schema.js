@@ -5,7 +5,7 @@ const Schema = use("Schema");
 
 class PrizeSchema extends Schema {
   up() {
-    this.create("prizes", table => {
+    this.create("prizes", (table) => {
       table.increments();
       table.string("prize_name");
       table.timestamps();

@@ -5,18 +5,22 @@ const Schema = use("Schema");
 
 class ParticipationSchema extends Schema {
   up() {
-    this.create("participations", table => {
+    this.create("participations", (table) => {
       table.increments();
       table
         .integer("user_id")
         .unsigned()
         .references("id")
-        .inTable("users");
+        .inTable("users")
+        .onUpdate("CASCADE")
+        .onDelete("CASCADE");
       table
         .integer("coupon_id")
         .unsigned()
         .references("id")
-        .inTable("coupons");
+        .inTable("coupons")
+        .onUpdate("CASCADE")
+        .onDelete("CASCADE");
       table.timestamps();
     });
   }
