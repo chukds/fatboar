@@ -1,0 +1,181 @@
+@layout('layouts.master')
+@section('moinfo')
+  @set('title', 'FAQ')
+  <meta name="description" content="Foire aux questions de Fatboar spécialiste burgers gibiers."/>
+@endsection
+@section('content')
+    {{-- Add FAQ page --}}
+    <main class="bg-light">
+      <div class="container">
+        <h1 class="title text-center">
+          <u>Foire aux questions</u>
+        </h1>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  1. Comment puis-je participer ?
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Pour participer à nos jeux concours, rien de plus simple !<br />
+                  Achetez un menu à plus de 18 euros, vous aurez un code inscrit sur votre
+                  ticket de caisse.<br />
+                  Connectez-vous sur le site du jeu-concours fatboar-jeu-concours.com,
+                  pour cela vous devez dans un premier temps vous inscrire puis vous
+                  connecter puis entrez le code fourni sur la page d'accueil puis cliquer
+                  sur le bouton "tenter ma chance".<br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  2. Comment savoir si on a gagné ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Une fois que vous vous êtes connecté sur le site du jeu-concours
+                  fatboar-jeu-concours.com, et que vous avez saisi votre code sur la pagne
+                  d'accueil et que vous avez cliqué sur le bouton "tenter ma chance", vous
+                  devriez être redirigé sur une page de confirmation qui indiquera la
+                  récompense que vous avez gagné, vous avez meme accès sur "votre espace"
+                  dans "mes gains" à l'ensemble des récompenses que vous avez gagné.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  3. Quelles sont les chances de victoire ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Vous avez 100% de chance de gagner et oui, ne ratez donc pas cette chance, fatboar vous fait gagner pour chaque achat une récompense.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  4. Quelles sont les récompenses à gagner ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Vous pouvez gagner soit un burger, un soda, un dessert voir un menu et à
+                  la fin de l'évènement une personne parmis toutes celles qui ont
+                  participé gagnera une range rover
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  5. Comment récupérer mes récompenses ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Très simple vous avez qu'à vous rendre à un restaurant fatboar, vous
+                  n'êtes pas obligé d'aller dans le restaurant où vous avez récupérer le
+                  code.<br />
+                  Vous vous rendez dans un restaurant fatboar vous présentez votre ticket
+                  de caisse ou donnez simplement le code, la caissière pourra connaitre
+                  votre récompense via notre plateforme de jeux.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSix">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  6. Combien de fois je peux participer ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Autant de fois que vous le voulez, vous avez jusqu'à la date de fin
+                  d'évènement que vous pouvez voir dans la page d'accueil du jeu concours
+                  sur votre droite en dessous de la range rover présentée.<br />
+                  ou jusqu'à l'épuisement de l'ensemble de nos tickets, une fois le stock
+                  de tickets épuisé, vous ne pourrez plus mettre votre code sur le site<br />
+                  mais ne vous inquiétez pas une fois que vous avez un code gagnant
+                  inscrit sur votre ticket de caisse, c'est que vous avez d'office
+                  remporté une récompense.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSeven">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSix">
+                  7. Comment savoir si j'ai gagné la Range Rover ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  Il y a un évènement organisé à la date de fin où tous les participants
+                  devront se rendre à l'endroit de cette évènement Si vous êtes tiré(e) au
+                  sort, vous recupérerez la range rover labas sur place, vous devrez vous
+                  munir de votre carte d'identité afin qu'on puisse vérifier que vous êtes
+                  bien le gagnant.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingEight">
+              <h2 class="mb-0">
+                <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseSix">
+                  8. A qui puis-je m'adresser si j'ai des questions ?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>
+                  N'hésitez pas à nous contacter à l'adresse contact@fatboar.com, nous
+                  reviendrons vers vous !<br />
+                  Vous pouvez nous envoyer un mail directement via le site du jeu-concours
+                  avec notre formulaire de contact ou alors directement via votre voîte
+                  mail.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </main>
+    {{-- End FAQ page --}}
+@endsection

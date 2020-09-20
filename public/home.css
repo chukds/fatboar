@@ -193,6 +193,15 @@ ul {
   padding: 60px 0;
 }
 
+.home-header {
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 58px;
+  color: #f42c04;
+  line-height: 1;
+}
+
 /*-- price area end --*/
 
 /*-- discount area start --*/

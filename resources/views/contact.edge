@@ -1,6 +1,9 @@
 @layout('layouts.master')
+@section('moinfo')
+  @set('title', 'Contactez le spécialiste burgers gibiers')
+  <meta name="description" content="Contactez Fatboar le spécialiste burgers gibiers."/>
+@endsection
 @section('content')
-    @set('title', 'Contact')
     {{-- Contact page --}}
     <main class="bg-light">
         <div class="container">
@@ -8,9 +11,9 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card card-signin my-5">
                         <div class="card-body">
-                            <h2 class="card-title text-center">
+                            <h1 class="card-title text-center">
                                 <strong>Contactez-nous</strong>
-                            </h2>
+                            </h1>
                             <hr class="my-4" />
                             @include('includes.notification')
                             <div class="text-center small">

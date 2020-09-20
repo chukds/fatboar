@@ -125,6 +125,9 @@ Route.on("password/reset").render("password.email").middleware(["guest"]);
 // Show CGU page
 Route.on("cgu").render("cgu");
 
+// Show FAQ page
+Route.on("faq").render("faq");
+
 // Show legal page
 Route.on("legales").render("legal");
 

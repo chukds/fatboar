@@ -1,21 +1,26 @@
 @layout('layouts.master')
+@section('moinfo')
+  @set('title', 'Accueil du spécialiste burgers gibiers')
+  <meta name="description" content="Fatboar spécialiste de burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."/>
+@endsection
 @section('mocss')
   {{ style('home') }}
 @endsection
 @section('content')
-    @set('title', 'Accueil')
-    <main>
+  <main>
 		<!-- hero area start -->
 		<div class="hero">
-			<div class="contaienr">
+			<div class="container">
 				<div class="hreo-wrapper">
 					<div class="hero-text text-center">
-						<h2>Entrer Code</h2>
+            <h1 class="home-header">
+              Participer au concours
+            </h1>
 					</div>
 					<div class="hreo-code text-center">
-						<form>
+						<form action="{{ route('register') }}" method="get">
 							<input type="text" name="text" placeholder="Entrer code du ticket ...">
-							<button type="submit">Valider</button>
+							<button type="submit">Valider code</button>
 						</form>
 					</div>
 				</div>
@@ -118,7 +123,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- perticipate area end -->
+		<!-- participate area end -->
 
 		<!-- maxi area start -->
 		<div class="maxi">
@@ -133,6 +138,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-    <!-- maxi area end -->
+    </div>
+  </main>
+  <!-- maxi area end -->
 @endsection

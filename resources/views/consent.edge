@@ -1,6 +1,9 @@
 @layout('layouts.master')
+@section('moinfo')
+  @set('title', 'Consentement')
+  <meta name="description" content="Fatboar spécialiste de burgers gibiers. Confirmation d'acceptation de termes et conditions."/>
+@endsection
 @section('content')
-    @set('title', 'Consent')
     {{-- Consent page --}}
     <main class="main-login-bg">
         <div class="container">
@@ -8,9 +11,9 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card card-signin my-5">
                         <div class="card-body">
-                            <h2 class="card-title text-center">
+                            <h1 class="card-title text-center">
                                 <strong>Confirmation</strong>
-                            </h2>
+                            </h1>
                             <hr class="my-4" />
                             <p>
                               <strong>Veuillez acceptez les conditions pour continuer.</strong>
