@@ -1,6 +1,6 @@
 @layout('layouts.master')
 @section('moinfo')
-  @set('title', 'Fatboar - Accueil | Restaurant Burgers Gibiers')
+  @set('title', 'Accueil | Restaurant Burgers Gibiers')
   <meta name="description" content="Fatboar spécialiste de burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."/>
 @endsection
 @section('mocss')
@@ -18,8 +18,9 @@
             </h1>
 					</div>
 					<div class="hreo-code text-center">
-						<form action="{{ route('register') }}" method="get">
-							<input type="text" name="text" placeholder="Entrer code du ticket ...">
+            <form action="{{ route('register') }}" method="get">
+              <label class="sr-only" for="code">Code</label>
+							<input type="text" name="code" placeholder="Entrer code du ticket ...">
 							<button type="submit">Valider code</button>
 						</form>
 					</div>
@@ -100,19 +101,19 @@
 					</div>
 					<div class="perticipate-list">
 						<div class="perlist-one">
-							<h4>MANGEZ</h4>
+							<h3>MANGEZ</h3>
 							<p>Commandez un menu maxi et recevoir son code.</p>
 						</div>
 						<div class="perlist-one">
-							<h4>JOUEZ</h4>
+							<h3>JOUEZ</h3>
 							<p>Valider le code sur notre plateforme pour recevoir votre prix.</p>
 						</div>
 						<div class="perlist-one">
-							<h4>DANCEZ</h4>
+							<h3>DANCEZ</h3>
 							<p> Vous avez gagné ? Célébrez!</p>
 						</div>
 						<div class="perlist-one">
-							<h4>SAVOUREZ</h4>
+							<h3>SAVOUREZ</h3>
 							<p>Présentez votre code à la caisse pour recevoir votre prix.</p>
 						</div>
 						<div class="perlist-one">
