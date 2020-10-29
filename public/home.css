@@ -95,7 +95,7 @@ ul {
 
 /*-- hero area start --*/
 .hero {
-  background-image: url(img/hbg.png);
+  background-image: url(img/shbg.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -228,7 +228,7 @@ ul {
 /*-- perticipate area start --*/
 
 .perticipate {
-  background-image: url(img/perbg.png);
+  background-image: url(img/perbg.webp);
   background-repeat: no-repeat;
   background-position: center;
   padding: 80px 0;
@@ -480,13 +480,13 @@ Small Screen - Tablate
 
   .hero {
     padding: 65px 0;
-    background-image: url(../img/shbg.png);
+    background-image: url(../img/shbg.webp);
   }
 
   .price {
     padding: 30px 0;
     padding-bottom: 0;
-    background-image: url(../img/l2.png);
+    background-image: url(../img/l2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -515,7 +515,7 @@ Small Screen - Tablate
 
   .discount {
     padding-bottom: 40px;
-    background-image: url(../img/l2.png);
+    background-image: url(../img/l2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -535,13 +535,13 @@ Small Screen - Tablate
   }
 
   .perticipate {
-    background-image: url(../img/shuti.png);
+    background-image: url(../img/shuti.webp);
     padding: 40px 0px;
   }
 
   .maxi {
     padding: 30px 0;
-    background-image: url(../img/l2.png);
+    background-image: url(../img/l2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -632,13 +632,13 @@ Small Screen - Tablate
 
   .hero {
     padding: 65px 0;
-    background-image: url(../img/shbg.png);
+    background-image: url(../img/shbg.webp);
   }
 
   .price {
     padding: 30px 0;
     padding-bottom: 0;
-    background-image: url(../img/l2.png);
+    background-image: url(../img/l2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -667,7 +667,7 @@ Small Screen - Tablate
 
   .discount {
     padding-bottom: 40px;
-    background-image: url(../img/l2.png);
+    background-image: url(../img/l2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
@@ -687,13 +687,13 @@ Small Screen - Tablate
   }
 
   .perticipate {
-    background-image: url(../img/shuti.png);
+    background-image: url(../img/shuti.webp);
     padding: 40px 0px;
   }
 
   .maxi {
     padding: 30px 0;
-    background-image: url(../img/l2.png);
+    background-image: url(../img/l2.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
