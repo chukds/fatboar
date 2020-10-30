@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://demo.fatboar.online/</loc>
+    <lastmod>2020-09-21T11:34:12+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>http://demo.fatboar.online/faq</loc>
+    <lastmod>2020-09-21T11:34:12+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://demo.fatboar.online/legales</loc>
+    <lastmod>2020-09-21T11:34:12+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://demo.fatboar.online/politique</loc>
+    <lastmod>2020-09-21T11:34:12+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>http://demo.fatboar.online/cgu</loc>
+    <lastmod>2020-09-21T11:34:12+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+</urlset>

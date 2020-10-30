@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /contact
+Disallow: /login
+Disallow: /register
+Disallow: /reset
+Sitemap: https://demo.fatboar.online/sitemap.xml
