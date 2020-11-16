@@ -30,7 +30,6 @@
     "@adonisjs/shield": "^1.0.8",
     "@adonisjs/validator": "^5.0.6",
     "@adonisjs/vow": "^1.0.17",
-    "bounds.js": "^1.0.4",
     "json2csv": "^5.0.0",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.0",

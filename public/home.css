@@ -228,11 +228,12 @@ ul {
 /*-- perticipate area start --*/
 
 .perticipate {
-  background-image: url(img/perbg.webp);
-  background-repeat: no-repeat;
+  /* background-image: url(img/perbg.webp); */
+  background-color: #343a40;
+  /* background-repeat: no-repeat;
   background-position: center;
   padding: 80px 0;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .perticipate-heading h2 {
@@ -535,7 +536,8 @@ Small Screen - Tablate
   }
 
   .perticipate {
-    background-image: url(../img/shuti.webp);
+    /* background-image: url(../img/shuti.webp); */
+    background-color: #343a40;
     padding: 40px 0px;
   }
 
@@ -687,7 +689,8 @@ Small Screen - Tablate
   }
 
   .perticipate {
-    background-image: url(../img/shuti.webp);
+    /* background-image: url(../img/shuti.webp); */
+    background-color: #343a40;
     padding: 40px 0px;
   }
 
