@@ -174,4 +174,9 @@ footer a:hover {
 
 .navbar-link:hover {
   color: red;
+  font-weight: bold;
+}
+
+a:focus {
+  outline: red solid 0.2rem;
 }
