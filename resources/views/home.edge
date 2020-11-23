@@ -1,7 +1,18 @@
 @layout('layouts.master')
 @section('moinfo')
-  @set('title', 'Accueil | Restaurant Burgers Gibiers')
+  @set('title', 'Jeu Concours | Restaurant Burgers Gibiers')
   <meta name="description" content="Fatboar restaurant de burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."/>
+  <script type='application/ld+json'>
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebSite",
+      "name": "Jeu Concours Fatboar",
+      "alternateName": "Fatboar Jeu Concours",
+      "url": "https://demo.fatboar.online",
+      "logo": "https://demo.fatboar.online/img/logo.webp",
+      "description":"Fatboar restaurant de burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."
+    }
+  </script>
 @endsection
 @section('mocss')
   {{ style('home.min') }}
