@@ -1,14 +1,25 @@
 @layout('layouts.master')
 @section('moinfo')
-  @set('title', 'Politiques | Restaurant Burgers Gibiers')
-  <meta name="description" content="Politique de Confidentialité de Fatboar spécialiste burgers gibiers."/>
+  @set('title', 'Politique | Restaurant Burgers Gibiers')
+  <meta name="description" content="Politique de Confidentialité de Fatboar restaurant burgers gibiers."/>
+  <script type='application/ld+json'>
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebPage",
+      "name": "Politique confidentialité Fatboar restaurant",
+      "alternateName": "Fatboar restaurant politique confidentialité",
+      "url": "https://demo.fatboar.online",
+      "logo": "https://demo.fatboar.online/img/fatboar-restaurant-logo.webp",
+      "description":"Politique de Confidentialité de Fatboar restaurant burgers gibiers."
+    }
+  </script>
 @endsection
 @section('content')
     {{-- Add privacy page --}}
     <main class="bg-light">
       <div class="container">
-        <h1 class="title text-center">
-          <u>Politique de Confidentialité</u>
+        <h1 class="title text-center" style="text-decoration:underline;">
+          Politique de Confidentialité
         </h1>
         <div>
           <p>

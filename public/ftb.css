@@ -180,3 +180,19 @@ footer a:hover {
 a:focus {
   outline: red solid 0.2rem;
 }
+
+.btn-primary {
+  background-color: #2929ff !important;
+}
+
+.btn-primary:hover {
+  background-color: #6161ff !important;
+}
+
+.btn-info {
+  background-color: #228b22 !important;
+}
+
+.btn-info:hover {
+  background-color: #98fb98 !important;
+}

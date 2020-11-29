@@ -1,16 +1,16 @@
 @layout('layouts.master')
 @section('moinfo')
   @set('title', 'Jeu Concours | Restaurant Burgers Gibiers')
-  <meta name="description" content="Fatboar restaurant de burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."/>
+  <meta name="description" content="Fatboar restaurant burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."/>
   <script type='application/ld+json'>
     {
       "@context": "http://www.schema.org",
-      "@type": "WebSite",
+      "@type": "WebPage",
       "name": "Jeu Concours Fatboar",
       "alternateName": "Fatboar Jeu Concours",
       "url": "https://demo.fatboar.online",
-      "logo": "https://demo.fatboar.online/img/logo.webp",
-      "description":"Fatboar restaurant de burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."
+      "logo": "https://demo.fatboar.online/img/fatboar-restaurant-logo.webp",
+      "description":"Fatboar restaurant burgers gibiers organize un concours. Tentez votre chance pour gagner une Range Rover Vogue."
     }
   </script>
 @endsection
@@ -115,38 +115,56 @@
 		<div class="perticipate">
 			<div class="container">
 				<div class="perticipate-wrapper text-center text-white">
-					<div class="perticipate-heading">
-						<h2>Comment participer au jeu-concours Fatboar</h2>
-					</div>
-					<div class="perticipate-list">
-						<div class="perlist-one">
-							<h3>MANGEZ</h3>
-              <p>Pour participer au jeu-concours commander une formule burger gibier maxi.</p>
-              <p>Vous recevrez un code unique pour cela.</p>
-						</div>
-						<div class="perlist-one">
-              <h3>JOUEZ</h3>
-              <p>Rendez-vous sur notre plateforme pour vous inscrire au jeu-concours Fatboar.</p>
-							<p>Valider votre code pour recevoir votre prix.</p>
-						</div>
-						<div class="perlist-one">
-							<h3>DANSEZ</h3>
-              <p>Dans le jeu-concours Fatboar nous sommes tous gagnants. Il y a des prix pour tout le monde.</p>
-              <p>Partager notre joie avec l'ouverture de notre 100 &eacute;me restaurant.</p>
-						</div>
-						<div class="perlist-one">
-              <h3>SAVOUREZ</h3>
-              <p>Profiter de vos prix dans le restaurant de burger gibier Fatboar.
-              </p>
-              <p>Pr&eacute;sentez votre code &agrave; la caisse pour recevoir votre prix.</p>
-              <p>Pour le grand prix, nous vous contacterons personnellement.</p>
-						</div>
-						<div class="perlist-one">
-							<h3>R&Eacute;P&Eacute;TEZ</h3>
-              <p>Vous n'avez pas gagné le grand prix ?</p>
-              <p>Peut-être la prochaine formule burger gibier maxi vous donnera la clef de la Range Rover Vogue.</p>
-						</div>
-					</div>
+          <div class="row align-items-center">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <div class="perticipate-heading">
+                  <h2>Comment participer au jeu-concours Fatboar</h2>
+                  <div class="perticipate-list">
+                    <div class="perlist-one">
+                      <h3>MANGEZ</h3>
+                      <p style="text-align:left;">
+                        Pour participer au jeu-concours commander une formule burger gibier maxi.
+                      </p>
+                      <p style="text-align:left;">Vous recevrez un code unique pour cela.</p>
+                    </div>
+                    <div class="perlist-one">
+                      <h3>JOUEZ</h3>
+                      <p style="text-align:left;">
+                        Rendez-vous sur notre plateforme pour vous inscrire au jeu-concours Fatboar.
+                      </p>
+                      <p style="text-align:left;">Valider votre code pour recevoir votre prix.</p>
+                    </div>
+                    <div class="perlist-one">
+                      <h3>DANSEZ</h3>
+                      <p style="text-align:left;">
+                        Dans le jeu-concours Fatboar nous sommes tous gagnants. Il y a des prix pour tout le monde.
+                      </p>
+                      <p style="text-align:left;">
+                        Partager notre joie avec l'ouverture de notre 100 &eacute;me restaurant.
+                      </p>
+                    </div>
+                    <div class="perlist-one">
+                      <h3>SAVOUREZ</h3>
+                      <p style="text-align:left;">Profiter de vos prix dans le restaurant de burger gibier Fatboar.</p>
+                      <p style="text-align:left;">
+                        Pr&eacute;sentez votre code &agrave; la caisse pour recevoir votre prix.
+                      </p>
+                      <p style="text-align:left;">Pour le grand prix, nous vous contacterons personnellement.</p>
+                    </div>
+                    <div class="perlist-one">
+                      <h3>R&Eacute;P&Eacute;TEZ</h3>
+                      <p style="text-align:left;">Vous n'avez pas gagné le grand prix ?</p>
+                      <p style="text-align:left;">
+                        Peut-être la prochaine formule burger gibier maxi vous donnera la clef de la Range Rover Vogue.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+          </div>
 				</div>
 			</div>
 		</div>
@@ -155,15 +173,21 @@
 		<!-- maxi area start -->
 		<div class="maxi">
 			<div class="container">
-				<div class="maxi-wrapper text-center">
-					<div class="maxi-heading">
-						<h2>Notre Formule Burger Gibier Maxi</h2>
-					</div>
-					<div class="maxi-content">
-            <img src="{{ assetsUrl('img/maxi.webp') }}" loading="lazy" alt="menu gibier maxi" />
-            <p>Votre restaurant Fatboar vous propose des formules burger gibiers, frite et boisson. Composez votre formule vous-même, selon vos goûts, et régalez-vous ! En plus, notre restaurant de burgers gibiers vous propose des plats frais et gastronomiques à emporter ou en livraison, alors n'hésitez plus et laissez-vous tenter !</p>
-					</div>
-				</div>
+        <div class="row align-items-center">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="maxi-wrapper text-center">
+              <div class="maxi-heading">
+                <h2>Notre Formule Burger Gibier Maxi</h2>
+              </div>
+              <div class="maxi-content">
+                <img src="{{ assetsUrl('img/maxi.webp') }}" loading="lazy" alt="menu gibier maxi" />
+                <p style="text-align:left;">Votre restaurant Fatboar vous propose des formules burger gibiers, frite et boisson. Composez votre formule vous-même, selon vos goûts, et régalez-vous ! En plus, notre restaurant de burgers gibiers vous propose des plats frais et gastronomiques à emporter ou en livraison, alors n'hésitez plus et laissez-vous tenter !</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
 			</div>
     </div>
   </main>
