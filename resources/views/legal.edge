@@ -1,7 +1,16 @@
 @layout('layouts.master')
 @section('moinfo')
   @set('title', 'Légales | Restaurant Burgers Gibiers')
-  <meta name="description" content="Mentions Légales de Fatboar spécialiste burgers gibiers."/>
+  <meta name="description" content="Mentions Légales de Fatboar restaurant burgers gibiers."/>
+  {
+    "@context": "http://www.schema.org",
+    "@type": "WebPage",
+    "name": "Mentions légales restaurant Fatboar",
+    "alternateName": "Restaurant Fatboar mentions légales",
+    "url": "https://demo.fatboar.online/legales",
+    "logo": "https://demo.fatboar.online/img/fatboar-restaurant-logo.webp",
+    "description":"Mentions Légales de Fatboar restaurant burgers gibiers"
+  }
 @endsection
 @section('content')
     {{-- Add Legales page --}}

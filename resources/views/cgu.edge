@@ -1,7 +1,18 @@
 @layout('layouts.master')
 @section('moinfo')
   @set('title', 'CGU | Restaurant Burgers Gibiers')
-  <meta name="description" content="Conditions générales d'utilisation du restaurant burgers gibiers."/>
+  <meta name="description" content="Conditions générales d'utilisation de Fatboar restaurant burgers gibiers."/>
+  <script type='application/ld+json'>
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebPage",
+      "name": "Conditions générales d'utilisation du restaurant Fatboar burgers gibiers",
+      "alternateName": "Restaurant Fatboar burgers gibiers conditions générales d'utilisation",
+      "url": "https://demo.fatboar.online/cgu",
+      "logo": "https://demo.fatboar.online/img/fatboar-restaurant-logo.webp",
+      "description":"Conditions générales d'utilisation de Fatboar restaurant burgers gibiers"
+    }
+  </script>
 @endsection
 @section('content')
     {{-- Add CGU page --}}

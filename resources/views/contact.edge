@@ -1,7 +1,18 @@
 @layout('layouts.master')
 @section('moinfo')
   @set('title', 'Contacte | Restaurant Burgers Gibiers')
-  <meta name="description" content="Contactez Fatboar le restaurant burgers gibiers."/>
+  <meta name="description" content="Contactez Fatboar restaurant burgers gibiers."/>
+  <script type='application/ld+json'>
+    {
+      "@context": "http://www.schema.org",
+      "@type": "WebPage",
+      "name": "Contactez Fatboar restaurant burgers gibiers",
+      "alternateName": "Restaurant Fatboar burgers gibiers contacte",
+      "url": "https://demo.fatboar.online/contact",
+      "logo": "https://demo.fatboar.online/img/fatboar-restaurant-logo.webp",
+      "description":"Contactez Fatboar restaurant burgers gibiers"
+    }
+  </script>
 @endsection
 @section('content')
     {{-- Contact page --}}
